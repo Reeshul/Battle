@@ -1,13 +1,13 @@
-<h1><%= @player1.name %> v <%= @player2.name %></h1>
+<h1><%= @game.player2.name %> v <%= @game.player2.name %></h1>
 <h2>Hit Points</h2>
-<strong><%= @player1.name %></strong>: <%= @player1.hit_points %> HP <br />
-<strong><%= @player2.name %></strong>: <%= @player2.hit_points %> HP
+<strong><%= @game.player2.name %></strong>: <%= @game.player2.hit_points %> HP <br />
+<strong><%= @game.player2.name %></strong>: <%= @game.player2.hit_points %> HP
 
 
 <form method="get" action="/play">
   <input name="attack" type="submit" value="Attack" />
 </form>
 
-<% if @attack %>
-<h2><em><%= @player2.name %> was attacked by <%= @player1.name %>!</em></h2>
+<% if @attack_player_2 %>
+<h2><em><%= @game.player2.name %> was attacked by <%= @game.player1.name %>!</em></h2>
 <% end %>
