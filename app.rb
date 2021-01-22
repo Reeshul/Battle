@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Battle < Sinatra::Base
 
@@ -21,7 +22,11 @@ class Battle < Sinatra::Base
     @player1 = $player1
     @player2 = $player2
     @attack = params[:attack]
-    @player1.attack(@player2) if @attack
+
+    Game.new(@player1, @player2).attack(@player2) if @attack
+
+    # @player1.attack(@player2) if @attack
+
     erb(:play)
   end
 
