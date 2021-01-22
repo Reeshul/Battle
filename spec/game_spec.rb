@@ -3,10 +3,10 @@ describe Game do
   let(:player_1) { double :player }
   let(:player_2) { double :player }
 
-  describe '#attack' do
-    it 'damages the player' do
+  describe "#attack" do
+    it "damages the player" do
       expect(player_2).to receive(:reduce_hp)
-      Game.new(player_1, player_2).attack(player_2)
+      Game.new.attack(player_2)
     end
   end
 end
