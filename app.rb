@@ -21,8 +21,11 @@ class Battle < Sinatra::Base
     @player1 = $player1
     @player2 = $player2
     @attack = params[:attack]
+    @player1.attack(@player2) if @attack
     erb(:play)
   end
+
+
 
   run! if app_file == $0
 end

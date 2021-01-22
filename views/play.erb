@@ -2,13 +2,13 @@
 <h3> Hit Points </h3>
 <table>
     <tr>
-      <td> <%= @player1.name %>: 100 HP </td>
-      <td> <%= @player2.name %>: 100 HP </td>
+      <td> <%= @player1.name %>: <%= @player1.hit_points %> HP </td>
+      <td> <%= @player2.name %>: <%= @player2.hit_points %> HP </td>
     </tr>
 </table>
 
 <form method="get" action="/play">
-  <input name="attack" type="submit" value="Attack!!" /> 
+  <input name="attack" type="submit" value="Attack!!" />
 </form>
 
 <% if @attack %>
