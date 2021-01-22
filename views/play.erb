@@ -1,17 +1,16 @@
-<h1> Welcome, <%= @name %> and <%= @name2 %>! </h1>
+<h1> Welcome, <%= @player1.name %> and <%= @player2.name %>! </h1>
 <h3> Hit Points </h3>
 <table>
     <tr>
-      <td> <%= @name %>: 100 HP </td>
-      <td> <%= @name2 %>: 100 HP </td>
+      <td> <%= @player1.name %>: 100 HP </td>
+      <td> <%= @player2.name %>: 100 HP </td>
     </tr>
 </table>
 
 <form method="get" action="/play">
-  <input id="attack" type="hidden" name="attack" value= true ></input>
-  <input type="submit" value="Attack!!"> </input>
+  <input name="attack" type="submit" value="Attack!!" /> 
 </form>
 
 <% if @attack %>
-<h1> <%= @name2 %> was attacked by <%= @name %>! </h1>
+<h1> <%= @player2.name %> was attacked by <%= @player1.name %>! </h1>
 <% end %>
